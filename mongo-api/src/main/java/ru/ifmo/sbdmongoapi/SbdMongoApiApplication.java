@@ -25,7 +25,7 @@ public class SbdMongoApiApplication {
 
     public @Bean
     MongoDbFactory mongoDbFactory() {
-        return new SimpleMongoDbFactory(new MongoClient(), "database");
+        return new SimpleMongoDbFactory(new MongoClient("dmytriigrishin.me"), "database");
     }
 
 	public static void main(String[] args) {
