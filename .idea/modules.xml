@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../sbd-mongo-api/discovery-service/discovery-service.iml" filepath="$PROJECT_DIR$/../sbd-mongo-api/discovery-service/discovery-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sbd-mongo-api/mongo-api/mongo-api.iml" filepath="$PROJECT_DIR$/../sbd-mongo-api/mongo-api/mongo-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../sbd-mongo-api/mongo-api/swarm-front.iml" filepath="$PROJECT_DIR$/../sbd-mongo-api/mongo-api/swarm-front.iml" />
+    </modules>
+  </component>
+</project>
