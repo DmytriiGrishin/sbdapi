@@ -1,0 +1,6 @@
+sidecar:
+  port: 2000
+  health-uri: http://localhost:${sidecar.port}/health.json
+spring:
+  application:
+    name:
