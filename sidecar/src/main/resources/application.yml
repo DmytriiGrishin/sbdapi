@@ -1,6 +1,17 @@
 sidecar:
+  #set port of ur app here
   port: 2000
   health-uri: http://localhost:${sidecar.port}/health.json
+
 spring:
   application:
-    name:
+    name: sidecar
+
+server:
+  port: 7531
+
+eureka:
+ client:
+  registryFetchIntervalSeconds: 30
+  serviceUrl:
+   defaultZone: ${EUREKA_SERV:http://dmytriigrishin.me:8090/eureka/}
