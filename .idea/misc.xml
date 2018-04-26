@@ -6,6 +6,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../sbd-mongo-api/discovery-service/pom.xml" />
         <option value="$PROJECT_DIR$/../sbd-mongo-api/mongo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/sidecar/pom.xml" />
+        <option value="$PROJECT_DIR$/mongo-api/pom.xml" />
+        <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
       </list>
     </option>
   </component>

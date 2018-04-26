@@ -9,10 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "Goods")
 public class Goods {
-    @Id
-    private ObjectId id;
 
     private String[] taken;
 

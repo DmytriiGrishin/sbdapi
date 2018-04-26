@@ -19,8 +19,7 @@ public class Form {
     private String name;
 
     private Gender gender;
-    
-    @DBRef
+
     private Goods goods;
 
     private int age;
