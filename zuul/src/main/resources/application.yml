@@ -6,7 +6,6 @@ spring:
     name: zuul
 
 zuul:
-    prefix: /api
     routes:
         forms:
             path: /forms/**
@@ -17,3 +16,4 @@ eureka:
   registryFetchIntervalSeconds: 30
   serviceUrl:
    defaultZone: ${EUREKA_SERV:http://138.68.140.160:8090/eureka/}
+

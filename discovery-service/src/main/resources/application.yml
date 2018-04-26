@@ -6,6 +6,6 @@ eureka:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://localhsot:80/
+      defaultZone: http://localhsot:8090/
     registerWithEureka: false
     fetchRegistry: false
