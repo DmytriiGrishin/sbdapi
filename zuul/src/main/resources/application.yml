@@ -1,5 +1,9 @@
 server:
-    port: 80
+    port: 8888
+
+spring:
+  application:
+    name: zuul
 
 zuul:
     prefix: /api
@@ -7,3 +11,9 @@ zuul:
         forms:
             path: /forms/**
             serviceId: mongo-api
+
+eureka:
+ client:
+  registryFetchIntervalSeconds: 30
+  serviceUrl:
+   defaultZone: ${EUREKA_SERV:http://138.68.140.160:8090/eureka/}
