@@ -1,0 +1,9 @@
+server:
+    port: 80
+
+zuul:
+    prefix: /api
+    routes:
+        forms:
+            path: /forms/**
+            serviceId: mongo-api
