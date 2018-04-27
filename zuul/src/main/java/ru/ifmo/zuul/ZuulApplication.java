@@ -1,6 +1,8 @@
 package ru.ifmo.zuul;
 
 import com.netflix.client.http.HttpRequest;
+import io.dummymaker.export.IExporter;
+import io.dummymaker.export.impl.JsonExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import ru.ifmo.zuul.generator.DataGenerator;
 import ru.ifmo.zuul.generator.POJO.graph.GenMongo;
+
+import java.util.List;
 
 @SpringBootApplication
 @RestController
@@ -30,11 +34,15 @@ public class ZuulApplication {
 	@Autowired
 	DataGenerator dataGenerator;
 
+    private IExporter exporter = new JsonExporter();
+
 	@RequestMapping(value = "/genmongo")
-	public ResponseEntity<GenMongo> genmongo(@RequestParam Integer count){
+	public @ResponseBody String genmongo(@RequestParam Integer count){
 		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
-		ResponseEntity<GenMongo>  genMongoResponseEntity = restTemplate.postForEntity("http://mongo-api/forms", httpRequest, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
-		return genMongoResponseEntity;
+		List<GenMongo> generated = dataGenerator.generateObject(GenMongo.class, count);
+        String  exportAsString = exporter.exportAsString(generated);
+        GenMongo genMongoResponseEntity = restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, exportAsString);
+		return exportAsString;
 	}
 
 	public static void main(String[] args) {
