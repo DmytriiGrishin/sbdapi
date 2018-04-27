@@ -20,7 +20,9 @@ public class Form {
 
     private Gender gender;
 
-    private Goods goods;
+    private String left;
+
+    private String taken;
 
     private int age;
 

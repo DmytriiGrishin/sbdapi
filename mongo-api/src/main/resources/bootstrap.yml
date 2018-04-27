@@ -6,4 +6,4 @@ eureka:
  client:
   registryFetchIntervalSeconds: 30
   serviceUrl:
-   defaultZone: ${EUREKA_SERV:http://127.0.0.1:8090/eureka/}
+   defaultZone: ${EUREKA_SERV:http://dmytriigrishin.me:8090/eureka/}
