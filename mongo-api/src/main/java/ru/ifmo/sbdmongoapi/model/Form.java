@@ -28,6 +28,6 @@ public class Form {
 
     private String destination;
 
-    private String[] reasons;
+    private String reason;
 
 }
