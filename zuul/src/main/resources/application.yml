@@ -10,6 +10,10 @@ zuul:
         forms:
             path: /forms/**
             serviceId: mongo-api
+        sidecar:
+            path: /api/**
+            serviceId: sidecar
+
 
 eureka:
  client:
