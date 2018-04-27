@@ -39,14 +39,17 @@ public class ZuulApplication {
 
 	@RequestMapping(value = "/genmongo")
 	public @ResponseBody String genmongo(@RequestParam Integer count){
-		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
         GenMongo genMongoResponseEntity = new GenMongo();
         String exportAsString = "ERROR";
-		for(int i = 0; i < count; i ++) {
-            List<GenMongo> generated = dataGenerator.generateObject(GenMongo.class, 1);
-            exportAsString = exporter.exportAsString(generated);
-            genMongoResponseEntity = restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, exportAsString);
-        }
+        List<GenMongo> generated = dataGenerator.generateObject(GenMongo.class, count);
+        exportAsString = exporter.exportAsString(generated);
+        generated.forEach(v -> {
+            HttpRequest httpRequest = new HttpRequest.Builder()
+                    .header("Content-Type", "application/json")
+                    .uri("http://mongo-api/forms")
+                    .build();
+            restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, v);
+        });
         return exportAsString;
 	}
 
@@ -54,14 +57,14 @@ public class ZuulApplication {
 
     @RequestMapping(value = "/gencasandra")
     public @ResponseBody String gencasandra(@RequestParam Integer count){
-        HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
         GenCassandra genMongoResponseEntity = new GenCassandra();
         String exportAsString = "";
-        for(int i = 0; i < count; i ++) {
-            List<GenCassandra> generated = dataGenerator.generateObject(GenCassandra.class, 1);
-            exportAsString = exporter.exportAsString(generated);
-            genMongoResponseEntity = restTemplate.postForObject("http://sidecar/cassandra/insert", httpRequest, GenCassandra.class, exportAsString);
-        }
+        List<GenCassandra> generated = dataGenerator.generateObject(GenCassandra.class, count);
+        exportAsString = exporter.exportAsString(generated);
+        generated.forEach(v -> {
+            HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
+            restTemplate.postForObject("http://sidecar/cassandra/insert", httpRequest, GenCassandra.class, v);
+        });
         return exportAsString;
     }
 
