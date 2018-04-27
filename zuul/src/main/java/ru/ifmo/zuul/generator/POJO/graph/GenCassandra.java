@@ -19,6 +19,18 @@ public class GenCassandra implements DBObject {
     @GenLow
     private String low;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getLow() {
+        return low;
+    }
+
     @Override
     public Integer getId() {
         return id;

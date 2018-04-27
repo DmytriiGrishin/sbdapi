@@ -24,6 +24,22 @@ public class GenNeo4j implements DBObject {
     @GenReason
     private String reason;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getLow() {
+        return low;
+    }
+
+    public String getAction_type() {
+        return action_type;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
     @Override
     public Integer getId() {
         return id;

@@ -34,6 +34,34 @@ public class GenMongo implements DBObject {
     @GenReason
     private String reason;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String getTaken() {
+        return taken;
+    }
+
+    public String getLeft() {
+        return left;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
     @Override
     public Integer getId() {
         return id;
