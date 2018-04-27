@@ -2,6 +2,7 @@ package ru.ifmo.sbdmongoapi;
 
 import com.mongodb.MongoClient;
 import org.fluttercode.datafactory.impl.DataFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -20,12 +21,12 @@ public class SbdMongoApiApplication {
 
     public @Bean
     MongoClient mongoClient() {
-        return new MongoClient("dmytriigrishin.me");
+        return new MongoClient();
     }
 
     public @Bean
     MongoDbFactory mongoDbFactory() {
-        return new SimpleMongoDbFactory(new MongoClient("dmytriigrishin.me"), "database");
+        return new SimpleMongoDbFactory(mongoClient(), "database");
     }
 
 	public static void main(String[] args) {

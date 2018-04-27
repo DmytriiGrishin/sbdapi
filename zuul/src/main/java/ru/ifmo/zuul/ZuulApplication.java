@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import ru.ifmo.zuul.generator.DataGenerator;
@@ -30,9 +31,10 @@ public class ZuulApplication {
 	DataGenerator dataGenerator;
 
 	@RequestMapping(value = "/genmongo")
-	public void genmongo(@RequestParam Integer count){
+	public ResponseEntity<GenMongo> genmongo(@RequestParam Integer count){
 		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
-			restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
+		ResponseEntity<GenMongo>  genMongoResponseEntity = restTemplate.postForEntity("http://mongo-api/forms", httpRequest, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
+		return genMongoResponseEntity;
 	}
 
 	public static void main(String[] args) {
