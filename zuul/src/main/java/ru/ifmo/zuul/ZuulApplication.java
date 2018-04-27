@@ -1,5 +1,6 @@
 package ru.ifmo.zuul;
 
+import com.netflix.client.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,7 +31,8 @@ public class ZuulApplication {
 
 	@RequestMapping(value = "/genmongo")
 	public void genmongo(@RequestParam Integer count){
-			restTemplate.postForObject("http://mongo-api/forms", null, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
+		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
+			restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
 	}
 
 	public static void main(String[] args) {
