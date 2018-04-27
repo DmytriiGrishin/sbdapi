@@ -32,7 +32,7 @@ public class ZuulApplication {
 	DataGenerator dataGenerator;
 
 	@RequestMapping(value = "/genmongo")
-	public void genmongo(@RequestAttribute int count){
+	public void genmongo(@RequestAttribute Integer count){
 			restTemplate.postForObject("http://mongo-api/forms", null, GenMongo.class, dataGenerator.generateObject(GenMongo.class, count));
 	}
 
