@@ -38,14 +38,15 @@ public class ZuulApplication {
     private IExporter exporter = new JsonExporter();
 
 	@RequestMapping(value = "/genmongo")
-	public @ResponseBody String genmongo(@RequestParam Integer count){
+	public @ResponseBody GenMongo genmongo(@RequestParam Integer count){
 		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
+        GenMongo genMongoResponseEntity = new GenMongo();
 		for(int i = 0; i < count; i ++) {
             List<GenMongo> generated = dataGenerator.generateObject(GenMongo.class, 1);
             String exportAsString = exporter.exportAsString(generated);
-            GenMongo genMongoResponseEntity = restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, exportAsString);
+            genMongoResponseEntity = restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, exportAsString);
         }
-        return "All good";
+        return genMongoResponseEntity;
 	}
 
 
@@ -53,9 +54,12 @@ public class ZuulApplication {
     @RequestMapping(value = "/gencasandra")
     public @ResponseBody GenCassandra gencasandra(@RequestParam Integer count){
         HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
-        List<GenCassandra> generated = dataGenerator.generateObject(GenCassandra.class, count);
-        String exportAsString = exporter.exportAsString(generated);
-        GenCassandra genMongoResponseEntity = restTemplate.postForObject("http://sidecar/cassandra/insert", httpRequest, GenCassandra.class, exportAsString);
+        GenCassandra genMongoResponseEntity = new GenCassandra();
+        for(int i = 0; i < count; i ++) {
+            List<GenCassandra> generated = dataGenerator.generateObject(GenCassandra.class, 1);
+            String exportAsString = exporter.exportAsString(generated);
+            genMongoResponseEntity = restTemplate.postForObject("http://sidecar/cassandra/insert", httpRequest, GenCassandra.class, exportAsString);
+        }
         return genMongoResponseEntity;
     }
 
