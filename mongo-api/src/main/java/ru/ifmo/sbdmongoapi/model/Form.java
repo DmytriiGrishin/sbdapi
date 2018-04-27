@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class Form {
     @Id
-    private ObjectId id;
+    private String id;
 
     private String name;
 

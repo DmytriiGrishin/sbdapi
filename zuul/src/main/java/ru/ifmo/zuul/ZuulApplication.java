@@ -40,7 +40,7 @@ public class ZuulApplication {
 	public @ResponseBody String genmongo(@RequestParam Integer count){
 		HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
 		List<GenMongo> generated = dataGenerator.generateObject(GenMongo.class, count);
-        String  exportAsString = exporter.exportAsString(generated);
+        String exportAsString = exporter.exportAsString(generated);
         GenMongo genMongoResponseEntity = restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, exportAsString);
 		return exportAsString;
 	}
