@@ -48,7 +48,7 @@ public class ZuulApplication {
                     .header("Content-Type", "application/json")
                     .uri("http://mongo-api/forms")
                     .build();
-            restTemplate.postForObject("http://mongo-api/forms", httpRequest, GenMongo.class, v);
+            restTemplate.postForObject("http://mongo-api/forms", v, GenMongo.class, v);
         });
         return exportAsString;
 	}
@@ -63,7 +63,7 @@ public class ZuulApplication {
         exportAsString = exporter.exportAsString(generated);
         generated.forEach(v -> {
             HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
-            restTemplate.postForObject("http://sidecar/cassandra/insert", httpRequest, GenCassandra.class, v);
+            restTemplate.postForObject("http://sidecar/cassandra/insert", v, GenCassandra.class, v);
         });
         return exportAsString;
     }
