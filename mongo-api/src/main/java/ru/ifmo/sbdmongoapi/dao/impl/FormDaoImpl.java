@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.ScriptOperations;
 import ru.ifmo.sbdmongoapi.dao.FormDao;
+import org.springframework.data.mongodb.core.ScriptOperations;
 import ru.ifmo.sbdmongoapi.dao.FormDaoCustom;
 import ru.ifmo.sbdmongoapi.model.Form;
 
@@ -24,10 +25,11 @@ public class FormDaoImpl  implements FormDaoCustom{
     }
 
     @Autowired
-    ScriptOperations scriptOperations;
+    MongoTemplate mongoTemplate;
 
     @Override
     public Form findFormById(String id) {
-        return (Form)scriptOperations.call("findFormById", id);
+        ScriptOperations defaultScriptOperations = mongoTemplate.scriptOps();
+        return (Form)defaultScriptOperations.call("findFormById", id);
     }
 }
