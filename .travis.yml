@@ -6,12 +6,12 @@ addons:
 before_deploy:
 - ssh-add /deploy_rsa
 
-eploy:
+deploy:
   provider: script
   skip_cleanup: true
   script:
--   ssh root@138.68.140.160
--   cd /sbdapi
--   ./deploy.sh
+  - ssh root@138.68.140.160
+  - cd /sbdapi
+  - ./deploy.sh
   on:
     branch: master
