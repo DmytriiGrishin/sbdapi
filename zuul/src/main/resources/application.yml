@@ -14,6 +14,13 @@ zuul:
             path: /api/**
             serviceId: sidecar
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
 
 eureka:
  client:
