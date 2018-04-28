@@ -2,6 +2,8 @@ package ru.ifmo.sbdmongoapi.dao.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.ScriptOperations;
 import ru.ifmo.sbdmongoapi.dao.FormDao;
 import ru.ifmo.sbdmongoapi.dao.FormDaoCustom;
 import ru.ifmo.sbdmongoapi.model.Form;
@@ -19,5 +21,13 @@ public class FormDaoImpl  implements FormDaoCustom{
                                     .map(Long::new)
                                     .reduce(0L, (a, b) -> a + b);
         return sum/count;
+    }
+
+    @Autowired
+    ScriptOperations scriptOperations;
+
+    @Override
+    public Form findById(String id) {
+        return (Form)scriptOperations.call("findFormById", id);
     }
 }
