@@ -7,6 +7,4 @@ after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_rsa
 - ssh-add deploy_rsa
-- ssh root@138.68.140.160
-- cd /sbdapi
-- ./deploy.sh
+- ssh root@138.68.140.160 'cd /sbdapi && nohup ./deploy.sh >/dev/null 2>&1 &'

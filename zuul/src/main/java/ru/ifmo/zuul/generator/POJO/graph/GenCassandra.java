@@ -17,7 +17,7 @@ public class GenCassandra implements DBObject {
     private String date;
 
     @GenLow
-    private String low;
+    private String crime;
 
     public String getDescription() {
         return description;
@@ -27,8 +27,8 @@ public class GenCassandra implements DBObject {
         return date;
     }
 
-    public String getLow() {
-        return low;
+    public String getCrime() {
+        return crime;
     }
 
     @Override
