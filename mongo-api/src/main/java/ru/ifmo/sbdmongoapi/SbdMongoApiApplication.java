@@ -19,12 +19,9 @@ public class SbdMongoApiApplication {
         return dataFactory;
     }
 
-    @Value("${spring.data.mongodb.uri}")
-    private String mongoUrl;
-
     public @Bean
     MongoClient mongoClient() {
-        return new MongoClient(mongoUrl.split(":")[1], Integer.parseInt(mongoUrl.split(":")[2]));
+        return new MongoClient();
     }
 
     public @Bean
