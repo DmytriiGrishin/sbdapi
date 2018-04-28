@@ -8,12 +8,14 @@ spring:
 zuul:
     routes:
         forms:
-            path: /forms/**
+            path: /mongo/**
             serviceId: mongo-api
-        sidecar:
-            path: /api/**
-            serviceId: sidecar
-
+        cassandra:
+            path: /cassandra/**
+            url: http://138.68.140.160:8542/cassandra
+        neo4j:
+            path: /neo4j/**
+            url: http://138.68.140.160:8542/neo4j
 hystrix:
   command:
     default:
