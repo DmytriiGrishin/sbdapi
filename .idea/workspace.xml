@@ -109,13 +109,13 @@
       <file leaf-file-name="SbdMongoApiApplication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mongo-api/src/main/java/ru/ifmo/sbdmongoapi/SbdMongoApiApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+            <state relative-caret-position="108">
+              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding>
-                <element signature="e#787#788#0" expanded="true" />
-                <element signature="e#835#836#0" expanded="true" />
-                <element signature="e#891#892#0" expanded="true" />
-                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#822#823#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#926#927#0" expanded="true" />
+                <element signature="e#1003#1004#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -651,7 +651,7 @@
       <workItem from="1524741953318" duration="2332000" />
       <workItem from="1524747621895" duration="4230000" />
       <workItem from="1524836802491" duration="1682000" />
-      <workItem from="1524893236244" duration="6550000" />
+      <workItem from="1524893236244" duration="7091000" />
     </task>
     <task id="LOCAL-00001" summary="Mongodb query added">
       <created>1524759456807</created>
@@ -891,11 +891,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524901198391</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Mongo for replica set">
+      <created>1524902526503</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1524902526503</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72616000" />
+    <option name="totallyTimeSpent" value="73157000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1056,7 +1063,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.5.RELEASE/spring-data-mongodb-2.0.5.RELEASE-sources.jar!/org/springframework/data/mongodb/core/mapping/Document.java" />
     <entry file="file://$PROJECT_DIR$/mongo-api/mvnw">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1448,15 +1454,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.6.3/mongo-java-driver-3.6.3.jar!/com/mongodb/MongoClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+          <folding>
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1841#1842#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mongo-api/src/main/java/ru/ifmo/sbdmongoapi/SbdMongoApiApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        <state relative-caret-position="108">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
           <folding>
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-            <element signature="e#891#892#0" expanded="true" />
-            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#822#823#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#926#927#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
           </folding>
         </state>
       </provider>
