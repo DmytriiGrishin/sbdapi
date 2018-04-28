@@ -1,1 +1,17 @@
 language: java
+
+addons:
+  ssh_known_hosts: 138.68.140.160
+
+before_deploy:
+- ssh-add /deploy_rsa
+
+eploy:
+  provider: script
+  skip_cleanup: true
+  script:
+-   ssh root@138.68.140.160
+-   cd /sbdapi
+-   ./deploy.sh
+  on:
+    branch: master

@@ -59,6 +59,7 @@ public class ZuulApplication {
     @RequestMapping(value = "/gencasandra")
     public @ResponseBody String gencasandra(@RequestParam Integer count){
         GenCassandra genMongoResponseEntity = new GenCassandra();
+        RestTemplate restTemplate = new RestTemplate();
         String exportAsString = "";
         List<GenCassandra> generated = dataGenerator.generateObject(GenCassandra.class, count);
         exportAsString = exporter.exportAsString(generated);
