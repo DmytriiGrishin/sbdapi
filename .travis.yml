@@ -4,7 +4,7 @@ addons:
   ssh_known_hosts: 138.68.140.160
 
 before_deploy:
-- ssh-add /deploy_rsa
+- ssh-add deploy_rsa
 
 deploy:
   provider: script
