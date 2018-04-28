@@ -4,6 +4,7 @@ addons:
   ssh_known_hosts: 138.68.140.160
 
 before_deploy:
+- eval "$(ssh-agent -s)"
 - ssh-add deploy_rsa
 
 deploy:
