@@ -27,7 +27,7 @@ public class FormDaoImpl  implements FormDaoCustom{
     ScriptOperations scriptOperations;
 
     @Override
-    public Form findById(String id) {
+    public Form findFormById(String id) {
         return (Form)scriptOperations.call("findFormById", id);
     }
 }

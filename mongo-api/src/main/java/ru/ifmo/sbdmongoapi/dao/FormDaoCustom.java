@@ -10,7 +10,7 @@ public interface FormDaoCustom {
     @RequestMapping("averageAge")
     public Long averageAge();
 
-    @RequestMapping("findById")
-    public Form findById(@RequestAttribute String id);
+    @RequestMapping("findFormById")
+    public Form findFormById(@RequestAttribute String id);
 
 }
