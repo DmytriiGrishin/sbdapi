@@ -3,17 +3,10 @@ language: java
 addons:
   ssh_known_hosts: 138.68.140.160
 
-before_deploy:
+after_success:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_rsa
 - ssh-add deploy_rsa
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-  - ssh root@138.68.140.160
-  - cd /sbdapi
-  - ./deploy.sh
-  on:
-    branch: master
+- ssh root@138.68.140.160
+- cd /sbdapi
+- ./deploy.sh
