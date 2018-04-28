@@ -5,6 +5,7 @@ addons:
 
 before_deploy:
 - eval "$(ssh-agent -s)"
+- chmod 600 deploy_rsa
 - ssh-add deploy_rsa
 
 deploy:
