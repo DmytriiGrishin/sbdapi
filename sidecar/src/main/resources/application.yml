@@ -1,6 +1,6 @@
 sidecar:
   #set port of ur app here
-  port: 9000
+  port: 8542
   health-uri: http://localhost:${sidecar.port}/health
 
 spring:
