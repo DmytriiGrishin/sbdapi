@@ -2,6 +2,7 @@ package ru.ifmo.zuul.generator.POJO.graph;
 
 import io.dummymaker.annotation.special.GenEnumerate;
 import io.dummymaker.annotation.string.GenCity;
+import io.dummymaker.annotation.string.GenId;
 import io.dummymaker.annotation.string.GenName;
 import io.dummymaker.annotation.string.GenNoun;
 import ru.ifmo.zuul.generator.POJO.DBObject;
@@ -10,7 +11,7 @@ import ru.ifmo.zuul.generator.customAnnotation.annotations.GenGender;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenReason;
 
 public class GenMongo implements DBObject {
-    @GenEnumerate(from = 1)
+    @GenId
     private Integer id;
 
     @GenName
@@ -21,6 +22,11 @@ public class GenMongo implements DBObject {
 
     @GenAge
     private Integer age;
+
+    @Override
+    public Integer getId() {
+        return null;
+    }
 
     @GenNoun
     private String taken;
@@ -62,8 +68,5 @@ public class GenMongo implements DBObject {
         return reason;
     }
 
-    @Override
-    public Integer getId() {
-        return id;
-    }
+
 }

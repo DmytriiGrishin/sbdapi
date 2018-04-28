@@ -64,7 +64,7 @@ public class ZuulApplication {
         exportAsString = exporter.exportAsString(generated);
         generated.forEach(v -> {
             HttpRequest httpRequest = new HttpRequest.Builder().header("Content-Type", "application/json").build();
-            restTemplate.postForObject("http://sidecar/cassandra/insert", v, GenCassandra.class);
+            restTemplate.postForObject("http://localhost:8542/cassandra/insert", v, GenCassandra.class);
         });
         return exportAsString;
     }
