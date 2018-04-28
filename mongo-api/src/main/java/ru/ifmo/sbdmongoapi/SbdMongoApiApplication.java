@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 
@@ -29,8 +30,8 @@ public class SbdMongoApiApplication {
     }
 
     public @Bean
-    MongoDbFactory mongoDbFactory() {
-        return new SimpleMongoDbFactory(new MongoClientURI(mongoUrl));
+    MongoTemplate mongoTemplate() {
+        return new MongoTemplate(new SimpleMongoDbFactory(new MongoClientURI(mongoUrl)));
     }
 
 	public static void main(String[] args) {
