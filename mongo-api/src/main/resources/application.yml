@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/database
+      uri: mongodb://localhost:2003,localhost:2001,localhost:2002/database

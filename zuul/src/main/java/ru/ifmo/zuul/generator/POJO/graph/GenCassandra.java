@@ -2,37 +2,19 @@ package ru.ifmo.zuul.generator.POJO.graph;
 
 import io.dummymaker.annotation.special.GenEnumerate;
 import io.dummymaker.annotation.time.GenDate;
+import lombok.Builder;
+import lombok.Data;
 import ru.ifmo.zuul.generator.POJO.DBObject;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenLow;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenReason;
 
-public class GenCassandra implements DBObject {
-    @GenEnumerate(from = 1)
+@Data
+@Builder
+public class GenCassandra {
+
     private Integer id;
-
-    @GenReason
     private String description;
-
-    @GenDate
     private String date;
-
-    @GenLow
     private String crime;
 
-    public String getDescription() {
-        return description;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public String getCrime() {
-        return crime;
-    }
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
 }

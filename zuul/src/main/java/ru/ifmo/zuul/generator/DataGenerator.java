@@ -43,16 +43,7 @@ public class DataGenerator {
         generateObject(GenMongo.class, reasonNumber);
         generateObject(GenMongo.class, genderNum);
 
-        /*cassandra*/
-        generateObject(GenCassandra.class, idNumber);
-        generateObject(GenCassandra.class , descriptionNumber);
-        generateObject(GenCassandra.class, dateNumber);
 
-        /* generate data for graph */
-        generateObject(GenNeo4j.class, pigsNameNumber);
-        generateObject(GenNeo4j.class, whatAlreadyDoneNumber);
-        generateObject(GenNeo4j.class, whatCanDoNumber);
-        generateObject(GenNeo4j.class, whyCanDoNumber);
 
     }
 

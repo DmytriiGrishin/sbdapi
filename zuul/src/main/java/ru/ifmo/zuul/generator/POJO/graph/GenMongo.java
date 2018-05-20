@@ -5,13 +5,15 @@ import io.dummymaker.annotation.string.GenCity;
 import io.dummymaker.annotation.string.GenId;
 import io.dummymaker.annotation.string.GenName;
 import io.dummymaker.annotation.string.GenNoun;
+import lombok.Data;
 import ru.ifmo.zuul.generator.POJO.DBObject;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenAge;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenGender;
 import ru.ifmo.zuul.generator.customAnnotation.annotations.GenReason;
 
+@Data
 public class GenMongo implements DBObject {
-    @GenId
+    @GenEnumerate
     private Integer id;
 
     @GenName
@@ -25,7 +27,7 @@ public class GenMongo implements DBObject {
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @GenNoun

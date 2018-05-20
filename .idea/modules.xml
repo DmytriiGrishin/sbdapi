@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/abdapi.iml" filepath="$PROJECT_DIR$/abdapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/discovery-service/discovery-service.iml" filepath="$PROJECT_DIR$/discovery-service/discovery-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/mongo-api/mongo-api.iml" filepath="$PROJECT_DIR$/mongo-api/mongo-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/piggymetrics.iml" filepath="$PROJECT_DIR$/piggymetrics.iml" />
       <module fileurl="file://$PROJECT_DIR$/sidecar/sidecar.iml" filepath="$PROJECT_DIR$/sidecar/sidecar.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>

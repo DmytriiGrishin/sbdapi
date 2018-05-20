@@ -9,13 +9,8 @@ zuul:
     routes:
         forms:
             path: /mongo/**
-            serviceId: mongo-api
-        cassandra:
-            path: /cassandra/**
-            url: http://localhost:8542/cassandra
-        neo4j:
-            path: /neo4j/**
-            url: http://localhost:8542/neo4j
+            serviceId: http://localhost:8080/
+
 hystrix:
   command:
     default:
@@ -24,9 +19,4 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 
-eureka:
- client:
-  registryFetchIntervalSeconds: 30
-  serviceUrl:
-   defaultZone: ${EUREKA_SERV:http://dmytriigrishin.me:8090/eureka/}
 

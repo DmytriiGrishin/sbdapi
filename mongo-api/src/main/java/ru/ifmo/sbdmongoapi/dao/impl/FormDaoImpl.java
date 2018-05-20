@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.ScriptOperations;
 import org.springframework.stereotype.Repository;
-import ru.ifmo.sbdmongoapi.dao.FormDao;
-import org.springframework.data.mongodb.core.ScriptOperations;
 import ru.ifmo.sbdmongoapi.dao.FormDaoCustom;
 import ru.ifmo.sbdmongoapi.model.Form;
 
@@ -14,18 +12,6 @@ import ru.ifmo.sbdmongoapi.model.Form;
 @Repository
 public class FormDaoImpl  implements FormDaoCustom{
 
-    @Autowired
-    FormDao formDao;
-
-    @Override
-    public Long averageAge() {
-        Long count = formDao.count();
-        Long sum = formDao.findAll().stream()
-                                    .map(Form::getAge)
-                                    .map(Long::new)
-                                    .reduce(0L, (a, b) -> a + b);
-        return sum/count;
-    }
 
     @Autowired
     MongoTemplate mongoTemplate;
